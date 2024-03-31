@@ -1,0 +1,15 @@
+<h1>Home</h1>
+
+<%= form_with method: :get do |form| %>
+  <%= form.label :flickr_id, "Flickr ID:" %>
+  <%= form.text_field :flickr_id %>
+  <%= form.submit "Search" %>
+<% end %>
+
+<% if @photo_urls %>
+  <ul>
+  <%= @photo_urls.each do |photo_url| %>
+    <li><%= image_tag(photo_url, width:"400") %></li>
+  <% end %>
+  </ul>
+<% end %>
